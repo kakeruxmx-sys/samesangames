@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#06080a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>PROPNIGHT 2 — THE NIGHTMARE RETURNS</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css?v=__BUILD__">
+</head>
+<body data-screen="boot" data-role="S">
+<canvas id="gl"></canvas>
+<div id="fx"><div id="fx-vig"></div><div id="fx-dark"></div><div id="fx-time"></div><div id="fx-mark"></div><div id="fx-hit"></div><div id="fx-grain"></div></div>
+<div id="labels"></div>
+
+<!-- ============================ in-game HUD ============================ -->
+<div id="hud" class="hidden">
+  <div id="hud-top">
+    <div id="h-time">15:00</div>
+    <div id="h-obj">—</div>
+    <div id="h-gens"></div>
+  </div>
+  <div id="hud-team"></div>
+  <div id="hud-feed"></div>
+  <div id="hud-center"><div id="h-cross"></div><div id="h-prompt"></div></div>
+  <div id="hud-bl"><div id="h-state"></div><div class="bar" id="h-stam"><i></i></div><div id="h-ping"></div></div>
+  <div id="hud-abil"></div>
+  <div id="hud-banner"></div>
+  <div id="hud-sense"><i></i><span>近くに違和感</span></div>
+  <div id="chatpanel" class="hidden"></div>
+  <div id="hud-spec" class="hidden">観戦中 — タップ / Tab で切り替え</div>
+  <div id="pause" class="hidden">
+    <div class="panel">
+      <h2>PAUSE</h2>
+      <p class="dim">オンライン対戦のため、ゲームは止まりません。</p>
+      <button class="btn-main" id="p-resume">ゲームに戻る</button>
+      <button class="btn-sub" id="p-settings">設定</button>
+      <button class="btn-sub danger" id="p-leave">試合を退出する</button>
+    </div>
+  </div>
+  <div id="lockhint" class="hidden">クリックして操作を開始</div>
+</div>
+
+<!-- ============================ touch controls ============================ -->
+<div id="touch" class="hidden">
+  <div id="look-zone"></div>
+  <div id="stick-zone"></div>
+  <div id="stick-base"><div id="stick-knob"></div></div>
+  <div class="btn hold s-only" data-act="use" id="b-use"><span>調べる</span></div>
+  <div class="btn s-only" data-act="transform" id="b-tf"><span id="b-tf-l">変身</span></div>
+  <div class="btn hold s-only" data-act="run" id="b-run"><span>走る</span></div>
+  <div class="btn s-only" data-act="crouch" id="b-crouch"><span>しゃがむ</span></div>
+  <div class="btn k-only" data-act="attack" id="b-atk"><span>攻撃</span></div>
+  <div class="btn k-only" data-act="ab0" id="b-ab0"><span>能力1</span><em></em></div>
+  <div class="btn k-only" data-act="ab1" id="b-ab1"><span>能力2</span><em></em></div>
+  <div class="btn k-only" data-act="ab2" id="b-ab2"><span>能力3</span><em></em></div>
+  <div class="btn small s-only" data-act="chat" id="b-chat"><span>💬</span></div>
+  <div class="btn small" data-act="menu" id="b-menu"><span>☰</span></div>
+</div>
+
+<!-- ============================ screens (filled by ui.ts) ============================ -->
+<div id="screens"></div>
+<div id="toast"></div>
+<div id="orient" class="hidden">📱 横画面に切り替えると遊びやすくなります <button id="orient-x">×</button></div>
+<div id="netbar" class="hidden"></div>
+<noscript><p style="color:#fff;padding:2em">PROPNIGHT 2 には JavaScript が必要です。</p></noscript>
+<script type="module" src="app.js?v=__BUILD__"></script>
+</body>
+</html>

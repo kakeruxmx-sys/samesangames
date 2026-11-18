@@ -1,0 +1,11 @@
+{
+  "name": "PROPNIGHT 2",
+  "short_name": "PROPNIGHT2",
+  "description": "THE NIGHTMARE RETURNS — online asymmetric prop-hunt horror for 5 human players",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#06080a",
+  "theme_color": "#06080a",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

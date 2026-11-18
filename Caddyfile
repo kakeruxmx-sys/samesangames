@@ -1,0 +1,5 @@
+# Caddy automatically obtains/renews certificates and proxies WebSocket upgrades with no extra config.
+# Replace example.com. Run the game server with TRUST_PROXY=1.
+example.com {
+	reverse_proxy 127.0.0.1:8080
+}

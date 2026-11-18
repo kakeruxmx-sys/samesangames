@@ -1,0 +1,26 @@
+# systemd unit. Install to /etc/systemd/system/propnight2.service, then: systemctl daemon-reload && systemctl enable --now propnight2
+# Assumes the project (with node_modules from "npm install --omit=dev", the built dist/ and docs/) lives in /opt/propnight2.
+[Unit]
+Description=PROPNIGHT 2 game server
+After=network.target
+
+[Service]
+Type=simple
+User=propnight
+WorkingDirectory=/opt/propnight2
+Environment=NODE_ENV=production
+Environment=PORT=8080
+Environment=HOST=127.0.0.1
+Environment=DATA_DIR=/var/lib/propnight2
+Environment=TRUST_PROXY=1
+ExecStart=/usr/bin/node dist/server.js
+Restart=always
+RestartSec=2
+StateDirectory=propnight2
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/propnight2
+
+[Install]
+WantedBy=multi-user.target
